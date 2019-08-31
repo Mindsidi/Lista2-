@@ -1,0 +1,94 @@
+#include <stdio.h>
+
+int main(void) {
+
+float  x=0,y=0,z=0,presenca=0,numero_aulas=0,repos=0,x2=0,y2=0,z2=0,media=0,gatilho=0;
+ int buu=0;
+
+  printf("Digite nota unidade 1\n");
+
+    scanf("%f",&x);
+
+  printf("Digite nota unidade 2\n");
+
+    scanf("%f",&y);
+
+  printf("Digite nota unidade 3\n");
+
+    scanf("%f",&z);
+
+  printf("Digite a quantidade de aulas no semestre\n");
+
+    scanf("%f",&numero_aulas);
+
+  printf("Quantas presencas o aluno teve?\n");
+
+    scanf("%f",&presenca);
+
+
+    media=x+y+z;
+
+    presenca=presenca/numero_aulas;
+
+if(presenca<=0.75){
+
+  printf("aluno reprovado por faltas\n");
+  gatilho=1;
+
+}
+if(media>=15 && gatilho==0){
+    printf("aluno foi aprovado por media\n");
+
+}
+
+else{
+
+
+
+ x2=x+y;
+ y2=y+z;
+ z2=z+x;
+
+   if(x2<=6 ||y2<=6 ||z2<=6){
+
+     printf("\naluno tirou pelo menos duas notas abaixo de 3\nREPROVADO!!\n");
+      buu=1;
+  }
+
+  if(buu==0){
+
+     if(x<3 ||y<3 ||z<3 ){
+
+       printf(" O aluno tirou uma nota abaixo de 3 \n");
+
+       printf("\nQual foi a nota dele na reposicao??\n");
+         scanf("%f",&repos);
+
+    if(x<y &&x<z){
+       x=repos;
+       }
+
+    if(y<x &&y<z){
+       y=repos;
+        }
+
+    if(z<x &&z<y){
+       z=repos;
+       }
+
+       media=x+y+z;
+
+    if(media>=15){
+        printf("aluno foi aprovado por media %0.2f\n",media/3);}
+
+    if(media<15){
+      printf("aluno foi reprovado %0.2f\n",media/3); }
+
+
+   }
+
+
+      }
+}
+  return 0;
+}
