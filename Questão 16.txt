@@ -1,0 +1,56 @@
+#include <stdio.h>
+#include <math.h>
+
+int main(void) {
+    //p1(x1, y1), p2(x2,y2); p3(x3,y3);
+    float x1, y1, x2, y2, x3, y3, l1, l2, l3;
+    int tmp;
+
+    printf("digite P1, x : ");
+    scanf("%f", &x1);
+    printf("digite P1, y : ");
+    scanf("%f", &y1);
+
+    printf("digite P2, x : ");
+    scanf("%f", &x2);
+    printf("digite P2, y : ");
+    scanf("%f", &y2);
+
+    printf("digite P3, x : ");
+    scanf("%f", &x3);
+    printf("digite P3, y : ");
+    scanf("%f", &y3);
+
+    l1=sqrt((x1-x2)*(x1-x2)+(y1-y2)*(y1-y2));
+    l2=sqrt((x2-x3)*(x2-x3)+(y2-y3)*(y2-y3));
+    l3=sqrt((x3-x1)*(x3-x1)+(y3-y1)*(y3-y1));
+
+    printf("o valor de l1 eh %f: \n", l1);
+    printf("o valor de l2 eh %f: \n", l2);
+    printf("o valor de l3 eh %f: \n", l3);
+
+    if (l1<l2)
+    {
+        tmp=l1; l1=l2; l2=tmp;
+    }
+    if (l1<l3)
+    {
+        tmp=l1; l1=l3; l3=tmp;
+    }
+    if(l1<l2+l3){
+        printf("os pontos formam um triangulo");
+    }
+    else{
+        printf("os pontos n formam o triangulo e portanto nao eh ");
+    }
+    if((l1==l2)&&(l2==l3))
+    {
+    printf("Equilatero\n");
+    }
+    else if ((l1==l2)||(l2==l3)||(l1==l3)){
+        printf("isoceles\n");
+    }
+    else {
+        printf("escaleno");
+    }
+}

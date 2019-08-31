@@ -1,0 +1,20 @@
+#include <stdio.h>
+
+int main(void)
+{
+float x , y , z , c ;
+// um maço de cigarro fabricado no Brasil custa em média R$ 7
+// x é o número de cigarros por dia, y é a quantidade de meses que ele fuma, z é preco do maco
+// Obs: usei meses em vez de anos porque fica mais preciso
+printf("Digite quantos cigarros voce fuma por dia : \n");
+scanf("%f", &x);
+printf("Digite o tempo que voce fuma em anos : \n");
+scanf("%f", &y);
+printf("Digite o preco do maco : \n");
+scanf("%f", &z);
+//c é o quanto ele gastou de cigarro na vida
+c=((x*365) * y * z);
+
+printf(" A quantidade de dinheiro que voce gastou na vida com cigarro eh= %f\n", c);
+return 0;
+}

@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void)
+{
+int x, y;
+// x é o numero, y é o sucessor
+printf("Digite um numero qualquer : ");
+scanf("%d", &x);
+
+y = x + 1;
+
+printf("O sucessor eh %d\n", y);
+return 0;
+}

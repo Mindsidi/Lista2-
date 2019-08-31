@@ -1,0 +1,25 @@
+#include <stdio.h>
+
+int main(void)
+{
+float x, y, z, a;
+
+printf("Digite um numero quaquer : \n");
+scanf("%f", &x);
+printf("Digite um numero quaquer : \n");
+scanf("%f", &y);
+printf("Digite um numero quaquer : \n");
+scanf("%f", &z);
+
+a= y + z;
+
+if (x > a)
+{
+printf("O primeiro numero eh maior que a soma do segundo e terceiro");
+}
+else
+{
+printf(" O primeiro numero nao eh maior que a soma do segundo e terceiro");
+}
+return 0;
+}

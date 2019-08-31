@@ -1,0 +1,50 @@
+#include <stdio.h>
+
+int main(void) {
+
+int  x,y,z,v ,mickey=0,minnie=0,donald=0,pateta=0,amizade=0,ajuda=0;
+
+  printf("Digite o 1 valor \n");
+
+    scanf("%d",&x);
+
+ printf("Digite o 2 valor \n");
+
+    scanf("%d",&y);
+
+ printf("Digite o 3 valor \n");
+
+    scanf("%d",&z);
+
+ printf("Digite o 4 valor \n");
+
+    scanf("%d",&v);
+
+ajuda=x%2;
+
+if(ajuda==0){
+  mickey=x;
+}
+ajuda=y%2;
+
+if(ajuda==0){
+  minnie=y;}
+
+ajuda=z%2;
+
+if(ajuda==0)
+  donald=z;
+
+ajuda=v%2;
+
+if(ajuda==0)
+  pateta=v;
+
+amizade=mickey+donald+minnie+pateta;
+
+
+  printf("a soma dos valores pares eh %d\n",amizade);
+
+
+  return 0;
+}

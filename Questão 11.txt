@@ -1,0 +1,15 @@
+#include <stdio.h>
+
+int main(void)
+{
+float a, b, c;
+
+printf("Digite o peso do latao em Kg : \n");
+scanf("%f", &a);
+
+b= a * 0.7;
+c= a * 0.3;
+printf(" A quantidade de cobre eh em Kg = %f\n", b);
+printf(" A quantidade de zinco eh em Kg = %f\n", c);
+return 0;
+}

@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void)
+{
+    float a, b, c;
+
+    printf("Digite um numero qualquer : \n");
+    scanf("%f", &a);
+
+    printf("Digite um numero qualquer : \n");
+    scanf("%f", &b);
+
+    printf("Digite um numero qualquer : \n");
+    scanf("%f", &c);
+
+    if (a>b && a>c)
+    {
+        printf("O maior valor eh %f\n", a);
+    }
+    if (b>a && b>c)
+    {
+        printf("O maior valor eh %f\n", b);
+    }if (c>b && c>a)
+    {
+        printf("O maior valor eh %f\n", c);
+    }
+    return 0;
+}

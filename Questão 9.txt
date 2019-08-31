@@ -1,0 +1,14 @@
+#include <stdio.h>
+
+int main(void)
+{
+float r, at;
+
+printf("Digite o custo de fábrica do carro : \n");
+scanf("%f", &r);
+
+at = r * 0.45 + r * 0.12 + r;
+
+printf(" O custo do carro eh = %f\n", at);
+return 0;
+}

@@ -1,0 +1,22 @@
+#include <stdio.h>
+
+int main(void)
+{
+float r, h, pi, al, ab, at, v;
+
+printf("Digite o valor do raio do cilindro : \n");
+scanf("%f", &r);
+printf("Digite a altura do cilindro : \n");
+scanf("%f", &h);
+printf("Digite o valor de pi que voce quer adotar: \n");
+scanf("%f", &pi);
+
+al= 2 * pi * r * h;
+ab= pi * r * r;
+at= al + 2 * ab;
+v= ab * h;
+
+printf(" A area do cilindro eh = %f\n", at);
+printf(" A volume do cilindro eh = %f\n", v);
+return 0;
+}

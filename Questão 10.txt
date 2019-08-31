@@ -1,0 +1,31 @@
+#include <stdio.h>
+
+int main(void) {
+
+int  vel=0,mot=0;
+
+
+  printf("Digite vel maxima permitida(km/h)\n");
+
+    scanf("%d",&vel);
+
+  printf("Digite velocidade do motorista(km/h)\n");
+
+    scanf("%d",&mot);
+
+  if(mot<=vel+10 && mot>vel)
+
+     printf("50 reais de multa\n");
+
+if(mot<=vel+30  && mot>vel+10)
+
+     printf("100 reais de multa\n");
+
+
+if(mot>vel+30  )
+
+     printf("200 reais de multa\n");
+
+
+  return 0;
+}

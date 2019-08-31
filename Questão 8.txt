@@ -1,0 +1,28 @@
+#include <stdio.h>
+
+int main(void) {
+
+int  x=0,y=0;
+
+
+  printf("Digite a\n");
+
+    scanf("%d",&x);
+
+  printf("Digite b\n");
+
+    scanf("%d",&y);
+
+if(x==y)
+  printf("a=b\n");
+
+if(x>y)
+  printf("a>b\n");
+
+if(x<y)
+  printf("a<b\n");
+
+
+
+  return 0;
+}
