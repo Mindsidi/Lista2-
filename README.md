@@ -162,9 +162,34 @@ if(y<x && y<z && y<k){
             cresc4=y;
             decres1=y;         }
 
-      }}
+      }
 
-  }
+//k     
+      if(k<y&&k<z){
+
+         cresc2=k;
+         decres3=k;
+
+           if(y<z){
+
+              cresc3=y;
+              decres2=y;
+
+              cresc4=z;
+              decres1=z;             
+
+           }
+
+            if(z<y){
+
+              cresc3=z;
+              decres2=z;
+
+              cresc4=y;
+              decres1=y;      
+        }
+
+  }}
 //3
 if(z<y && z<x && z<k){
 
