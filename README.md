@@ -113,13 +113,56 @@ if(y<x && y<z && y<k){
 
       cresc1=y;
       decres4=y;
+//x
+    if(x<z && x<k){
 
-    if(y<z&&y<k){
+        cresc2=x;
+        decres3=x;
+   
+       if(z<k){
 
-        cresc2=y;
-        decres3=y;
+            cresc3=z;
+            decres2=z;
 
-    }
+            cresc4=k;
+            decres1=k;     }
+
+       if(k<z){
+
+
+            cresc3=k;
+            decres2=k;
+
+            cresc4=z;
+            decres1=z;
+
+       }
+
+      }
+//z
+      if(z<y&&z<k){
+
+        cresc2=z;
+        decres3=z;
+
+          if(y<k){
+
+            cresc3=y;
+            decres2=y;
+
+            cresc4=k;
+            decres1=k;
+         }
+
+          if(k<y){
+
+            cresc3=k;
+            decres2=k;
+
+            cresc4=y;
+            decres1=y;         }
+
+      }}
 
   }
 //3
