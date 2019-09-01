@@ -190,20 +190,90 @@ if(y<x && y<z && y<k){
         }
 
   }}
+//----------------------------------------------
 //3
-if(z<y && z<x && z<k){
+if(z<x && z<y && z<k){
 
       cresc1=z;
       decres4=z;
+//x
+    if(x<z && x<k){
 
-    if(y<z&&y<k){
+        cresc2=x;
+        decres3=x;
+   
+       if(y<k){
+
+            cresc3=y;
+            decres2=y;
+
+            cresc4=k;
+            decres1=k;     }
+
+       if(k<y){
+
+
+            cresc3=k;
+            decres2=k;
+
+            cresc4=y;
+            decres1=y;
+
+       }
+
+      }
+//y
+      if(z<x&&z<k){
 
         cresc2=y;
         decres3=y;
 
-    }
+          if(x<k){
 
-  }
+            cresc3=x;
+            decres2=x;
+
+            cresc4=k;
+            decres1=k;
+         }
+
+          if(k<x){
+
+            cresc3=k;
+            decres2=k;
+
+            cresc4=x;
+            decres1=x;         }
+
+      }
+
+//k     
+      if(k<y&&k<z){
+
+         cresc2=k;
+         decres3=k;
+
+           if(x<z){
+
+              cresc3=x;
+              decres2=x;
+
+              cresc4=z;
+              decres1=z;             
+
+           }
+
+            if(z<x){
+
+              cresc3=z;
+              decres2=z;
+
+              cresc4=x;
+              decres1=x;      
+        }
+
+  }}
+ //-------------------------------------------------------------------------
 //4
 if(k<y && k<z && k<x){
 
