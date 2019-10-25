@@ -80,3 +80,115 @@ printf("\n\n O Programa foi fechado");
 getch(); 
 
 }
+#include <stdio.h>
+#include <stdlib.h>
+#include <math.h>
+#include <locale.h>
+#include <conio.h>
+
+menu1() {
+    
+    float s, s0, v0, a, t;
+    int loop, repet, linha, coluna;
+    
+    setlocale(LC_ALL,"portuguese");    
+
+    printf ("\n\t\t\t\tATRIBUIÇÃO DE VALORES");
+    printf("\n\n");
+    printf ("\tQuantidade de objetos: ");
+    scanf ("&d", &loop);
+    printf ("\n");
+    
+    float matriz [loop][6];
+
+    for (linha = 0; linha < loop; linha++){        
+        
+        matriz[linha][0] = linha;
+        
+        printf ("\tObjeto %f - Posição inicial (s0): ", linha);
+        coluna = 1;
+        scanf ("%f", &s0);        
+        matriz[linha][coluna] = s0;
+        
+        printf ("\tObjeto %f - Velocidade inicial (v0): ", linha);
+        coluna = coluna + 1;
+        scanf ("%f", &v0);        
+        matriz[linha][coluna] = v0;
+        
+        printf ("\tObjeto %f - Aceleração (a): ", linha);
+        coluna = coluna + 1;
+        scanf ("%f", &a);        
+        matriz[linha][coluna] = a;
+                
+        printf ("\tObjeto %f - Tempo (t): ", linha);
+        coluna = coluna + 1;
+        scanf ("%f", &t);        
+        matriz[linha][coluna] = t;
+        
+        matriz[linha][5] = (s0 + v0*t + ((a*(t*t))/2));
+                
+        printf ("\n");
+    }
+
+    printf ("\t\t\t\t");
+    printf ("TABELA DE VALORES");
+    printf ("\n\n");
+    printf ("\t");
+    printf ("Objeto    Posição(s0)    Velocidade(v0)   Aceleração(a)      Tempo(t)");
+    printf ("\n\n");
+        
+    for (repet = 0; repet < loop; repet++){
+        for (coluna = 0; coluna < 6; coluna++){
+            
+            printf ("\t%.2f\t|", matriz [repet][coluna]);
+        
+        }
+        
+    printf ("\n");
+    
+    }
+}
+
+main () {
+    
+    int resp;
+    
+    setlocale(LC_ALL,"portuguese");
+    
+    printf ("\tFUNÇÃO HORÁRIA DA POSIÇÃO");
+    printf ("\n\n");
+    printf ("1 - Atribuição e apresentação de dados\n");
+    printf ("2 - Função horária da velocidade e da aceleração\n");
+    printf ("3 - Resolutor de derivadas simples\n");
+    printf ("4 - Sair\n\n");
+    
+    printf ("Digite o número da opção desejada: ");
+    scanf ("&d", &resp);
+    
+    while (resp <= 4) {
+        
+        switch (resp) {
+            
+            case 1:
+                menu1();
+            break;
+            
+            case 2:
+                printf ("Opção inválida, tente novamente!");
+            break;
+            
+            case 3:
+                printf ("Opção inválida, tente novamente!");
+            break;
+            
+            case 4:
+                printf ("Opção inválida, tente novamente!");
+            break;
+            
+            default:
+                printf ("Opção inválida, tente novamente!");
+            break;
+        }    
+    }
+}
+
