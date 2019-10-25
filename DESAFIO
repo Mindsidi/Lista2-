@@ -59,3 +59,70 @@ int main()
     printf("Hello World!\n");
     return 0;
 }
+//////////////////////////////////////
+gerador de tabela verdade 
+#include <stdio.h>
+#include <math.h>
+#include <iso646.h>
+#include <stdlib.h>
+int main(void){
+    int entrada;
+    char vet[26];
+    int qnt,j; /*// quantidade de variáveis*/
+    printf("Digite a quantidade de entrada para sua tabela\n");
+    scanf ("%d", &qnt);
+    printf ("%d\n" , qnt);
+    printf("  A B C D E F G H I J K L M N O P Q R S T U V W X Y Z\n");
+    /*//                          2^n - quantidade de linhas da tabela*/
+    for(entrada = 0; entrada < (pow(2,qnt)); entrada++) {
+        vet[0 ] = (entrada & 1       )?1:0;      /*   // x ? a:b <=> if(x) a; else b;*/
+        vet[1 ] = (entrada & 2       )?1:0;      /*   // inline if*/
+        vet[2 ] = (entrada & 4       )?1:0;
+        vet[3 ] = (entrada & 8       )?1:0;
+        vet[4 ] = (entrada & 16      )?1:0;
+        vet[5 ] = (entrada & 32      )?1:0;
+        vet[6 ] = (entrada & 64      )?1:0;
+        vet[7 ] = (entrada & 128     )?1:0;
+        vet[8 ] = (entrada & 256     )?1:0;
+        vet[9 ] = (entrada & 512     )?1:0;
+        vet[10] = (entrada & 1024    )?1:0;
+        vet[11] = (entrada & 2048    )?1:0;
+        vet[12] = (entrada & 4096    )?1:0;
+        vet[13] = (entrada & 8192    )?1:0;
+        vet[14] = (entrada & 16384   )?1:0;
+        vet[15] = (entrada & 32768   )?1:0;
+        vet[16] = (entrada & 65536   )?1:0;
+        vet[17] = (entrada & 131072  )?1:0;
+        vet[18] = (entrada & 262144  )?1:0;
+        vet[19] = (entrada & 524288  )?1:0;
+        vet[20] = (entrada & 1048576 )?1:0;
+        vet[21] = (entrada & 2097152 )?1:0;
+        vet[22] = (entrada & 4194304 )?1:0;
+        vet[23] = (entrada & 8388608 )?1:0;
+        vet[24] = (entrada & 16777216)?1:0;
+        vet[25] = (entrada & 33554432)?1:0;
+        printf("  ");
+        for(j=0;j<qnt;j++){
+            printf("%d ",vet[j]);
+        }
+        printf("\n");
+    }
+    getchar();
+    return 0;
+}
+struct portalogica{
+int imput[i];
+int saida;
+int valor;
+int tipo;
+
+
+
+typedef struct
+{
+    int id;  /*An unique identifier for the gate*/
+    int type; /*Type of the gate : AND, OR, XOR, etc*/
+    int numberOfInputs; /*How many inputs you will use*/
+    LogicalGate *inputList; /*A pointer to an array of LogicalGate structures*/
+    LogicalGate *output;    /*A pointer to the next LogicalGate structure*/
+}LogicalGate;
