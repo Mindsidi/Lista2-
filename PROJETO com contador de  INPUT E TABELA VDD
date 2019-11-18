@@ -16,13 +16,20 @@ int main()
     int entrada1, entrada2, saida, i, local1, local2;
     char nome[TAMNOME], resultados[10];
     unsigned int input=0;
+    char endereco[70];
     
     for (i=0;i<=10;i++) {
     	
         resultados[i]=1;
     }
-    FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
-
+    
+   puts("Digite o endereço completo do arquivo");
+   scanf("%s", &endereco);
+   
+    FILE* arqNome=fopen(endereco, "r");
+ //   FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
+ 
+ 
     while (fscanf(arqNome, "%s %d %d %d", nome, &entrada1, &entrada2, &saida)!=EOF) {
         local1=resultados[entrada1];
         local2=resultados[entrada2];
