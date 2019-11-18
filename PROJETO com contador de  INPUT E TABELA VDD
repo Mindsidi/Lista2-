@@ -1,6 +1,11 @@
 // OLHA IF DO NOMES NOT, AND, OR, NAND, NOR, XOR, XNOR, PRA COLOCAR OS !=
 #include <stdio.h>
+#include <math.h>
+#include<string.h>
+
+
 int main()
+	
 #define TAMNOME 70
 #define ANDCERTO 2
 #define NANDCERTO 2
@@ -90,9 +95,49 @@ int main()
     printf("\n\n inputs igual %d \n",input);
     
  	puts("\nA tabela verdade para o programa e:");
- 	
+ 	//--------------------------------------------------------
+ 	 int qnt, j;
+ 	 qnt=input; //trocar qnt por input dps
+ 	 
+ 	 int entrada;
+ 	 char vet[26];
+ 	 
+ 	 
+ 	 for(entrada = 0; entrada < (pow(2,qnt)); entrada++) {
+        vet[0 ] = (entrada & 1       )?1:0;      /*   // x ? a:b <=> if(x) a; else b;*/
+        vet[1 ] = (entrada & 2       )?1:0;      /*   // inline if*/
+        vet[2 ] = (entrada & 4       )?1:0;
+        vet[3 ] = (entrada & 8       )?1:0;
+        vet[4 ] = (entrada & 16      )?1:0;
+        vet[5 ] = (entrada & 32      )?1:0;
+        vet[6 ] = (entrada & 64      )?1:0;
+        vet[7 ] = (entrada & 128     )?1:0;
+        vet[8 ] = (entrada & 256     )?1:0;
+        vet[9 ] = (entrada & 512     )?1:0;
+        vet[10] = (entrada & 1024    )?1:0;
+        vet[11] = (entrada & 2048    )?1:0;
+        vet[12] = (entrada & 4096    )?1:0;
+        vet[13] = (entrada & 8192    )?1:0;
+        vet[14] = (entrada & 16384   )?1:0;
+        vet[15] = (entrada & 32768   )?1:0;
+        vet[16] = (entrada & 65536   )?1:0;
+        vet[17] = (entrada & 131072  )?1:0;
+        vet[18] = (entrada & 262144  )?1:0;
+        vet[19] = (entrada & 524288  )?1:0;
+        vet[20] = (entrada & 1048576 )?1:0;
+        vet[21] = (entrada & 2097152 )?1:0;
+        vet[22] = (entrada & 4194304 )?1:0;
+        vet[23] = (entrada & 8388608 )?1:0;
+        vet[24] = (entrada & 16777216)?1:0;
+        vet[25] = (entrada & 33554432)?1:0;
+        printf("  ");
+        for(j=0;j<qnt;j++){
+            printf("%d ",vet[j]);
+        }
+        printf("\n");
  	
  	
     
     fclose(arqNome);
+}
 }
