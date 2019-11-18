@@ -1,0 +1,98 @@
+// OLHA IF DO NOMES NOT, AND, OR, NAND, NOR, XOR, XNOR, PRA COLOCAR OS !=
+#include <stdio.h>
+int main()
+#define TAMNOME 70
+#define ANDCERTO 2
+#define NANDCERTO 2
+#define NORCERTO 0
+#define XORCERTO 1
+#define XNORCERTO 1
+{
+    int entrada1, entrada2, saida, i, local1, local2;
+    char nome[TAMNOME], resultados[10];
+    unsigned int input=0;
+    
+    for (i=0;i<=10;i++) {
+    	
+        resultados[i]=1;
+    }
+    FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
+
+    while (fscanf(arqNome, "%s %d %d %d", nome, &entrada1, &entrada2, &saida)!=EOF) {
+        local1=resultados[entrada1];
+        local2=resultados[entrada2];
+        
+        for (i=0;i<=TAMNOME;i++) {
+            //O do AND TÁ OK
+            if(nome[i]=='a' && nome[i+1]=='n' && nome[i+2]=='d' && nome[i-1]!='n'){
+                if(local1+local2==ANDCERTO){
+                    resultados[saida]=1;
+                }
+                else {
+                    resultados[saida]=0;
+                }
+            }
+            //O do OR TÁ OK
+            if(nome[i]=='o' && nome[i+1]=='r' && nome[i-1]!='x' && nome[i-1]!='n' && nome[i-1]!='x'){
+                if(local1+local2>=1){
+                    resultados[saida]=1;
+                    printf("krl");
+                }
+                else {
+                    resultados[saida]=0;
+                }
+            }
+            //A PARTI DAQUI É SÓ TEORIA KKK
+            // NAND TÁ "CERTO"
+            if(nome[i]=='n' && nome[i+1]=='a' && nome[i+2]=='n' && nome[i+3]=='d'){
+                if(local1+local2==NANDCERTO){
+                    resultados[saida]=0;
+                }
+                else {
+                    resultados[saida]=1;
+                }
+            }
+            // NOR CERTO
+            if(nome[i]=='n' && nome[i+1]=='o' && nome[i+2]=='r'){
+                if(local1+local2==NORCERTO){
+                    resultados[saida]=1;
+                }
+                else {
+                    resultados[saida]=0;
+                }
+            }
+            // XOR CERTO
+            if(nome[i]=='x' && nome[i+1]=='o' && nome[i+2]=='r'){
+                if(local1+local2==XORCERTO){
+                    resultados[saida]=1;
+                    
+                }
+                else {
+                    resultados[saida]=0;
+                }
+            }
+            if(nome[i]=='x' && nome[i+1]=='n' && nome[i+2]=='0' && nome[i+3]){
+                if(local1+local2==XNORCERTO){
+                    resultados[saida]=0;
+                }
+                else {
+                    resultados[saida]=1;
+                }
+            }
+				if(nome[i]=='I' && nome[i+1]=='N' && nome[i+2]=='P'){
+					input++;
+				}
+        }
+        printf("%s %d %d %d\n", nome, entrada1, entrada2, saida);
+
+    }
+    
+    printf("\n\n inputs igual %d \n",input);
+    
+ 	puts("\nA tabela verdade para o programa e:");
+ 	
+ 	
+ 	
+    
+    fclose(arqNome);
+}
