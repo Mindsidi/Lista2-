@@ -1,3 +1,4 @@
+  
 // OLHA IF DO NOMES NOT, AND, OR, NAND, NOR, XOR, XNOR, PRA COLOCAR OS !=
 #include <stdio.h>
 #include <math.h>
@@ -17,6 +18,7 @@ int main()
     char nome[TAMNOME], resultados[10];
     unsigned int input=0;
     char endereco[70];
+    char calculo [150] [2];  //matriz [linhas] [colunas]
     
     for (i=0;i<=10;i++) {
     	
@@ -26,78 +28,121 @@ int main()
    puts("Digite o endereço completo do arquivo");
    scanf("%s", &endereco);
    
-    FILE* arqNome=fopen(endereco, "r");
- //   FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
+   // FILE* arqNome=fopen(endereco, "r");
+    FILE* arqNome=fopen("C:/Users/Fernando/Desktop/nomes.txt", "r");
+  	 
  
- 
-    while (fscanf(arqNome, "%s %d %d %d", nome, &entrada1, &entrada2, &saida)!=EOF) {
+    //--------------------------------------------------------------------------------------------------------
+  
+  int aux=input;
+
+    
+    while (fscanf(arqNome, "%s %d %d %d", nome, &calculo[i] [0], &calculo[i] [1], &calculo[i] [2])!=EOF) {
         local1=resultados[entrada1];
         local2=resultados[entrada2];
         
         for (i=0;i<=TAMNOME;i++) {
             //O do AND TÁ OK
             if(nome[i]=='a' && nome[i+1]=='n' && nome[i+2]=='d' && nome[i-1]!='n'){
+            
+
                 if(local1+local2==ANDCERTO){
-                    resultados[saida]=1;
-                }
-                else {
-                    resultados[saida]=0;
+                    calculo[i][2]=1;
+ }
+                else {            
+
+                    calculo[i][2]=0;
                 }
             }
             //O do OR TÁ OK
             if(nome[i]=='o' && nome[i+1]=='r' && nome[i-1]!='x' && nome[i-1]!='n' && nome[i-1]!='x'){
+            
+
                 if(local1+local2>=1){
-                    resultados[saida]=1;
+                       calculo[i][2]=1;
                     printf("krl");
                 }
                 else {
-                    resultados[saida]=0;
+                calculo[i][2]=1;
+
                 }
             }
             //A PARTI DAQUI É SÓ TEORIA KKK
             // NAND TÁ "CERTO"
             if(nome[i]=='n' && nome[i+1]=='a' && nome[i+2]=='n' && nome[i+3]=='d'){
+            	
+
                 if(local1+local2==NANDCERTO){
-                    resultados[saida]=0;
+                   calculo[i][2]=0;
+
                 }
                 else {
-                    resultados[saida]=1;
+                    calculo[i][2]=1;
+
                 }
             }
             // NOR CERTO
             if(nome[i]=='n' && nome[i+1]=='o' && nome[i+2]=='r'){
+            
+
                 if(local1+local2==NORCERTO){
-                    resultados[saida]=1;
+                                        calculo[i][2]=1;
+
                 }
                 else {
-                    resultados[saida]=0;
+                                        calculo[i][2]=0;
+
                 }
             }
             // XOR CERTO
             if(nome[i]=='x' && nome[i+1]=='o' && nome[i+2]=='r'){
+            
+
                 if(local1+local2==XORCERTO){
-                    resultados[saida]=1;
+                                        calculo[i][2]=1;
+
                     
                 }
                 else {
-                    resultados[saida]=0;
+                                        calculo[i][2]=0;
+
                 }
             }
             if(nome[i]=='x' && nome[i+1]=='n' && nome[i+2]=='0' && nome[i+3]){
                 if(local1+local2==XNORCERTO){
-                    resultados[saida]=0;
+                                       calculo[i][2]=0;
+
                 }
                 else {
-                    resultados[saida]=1;
+                                       calculo[i][2]=1;
+
                 }
             }
-				if(nome[i]=='I' && nome[i+1]=='N' && nome[i+2]=='P'){
+				if(nome[i]=='I' && nome[i+1]=='N' && nome[i+2]=='P'){  //input
 					input++;
 				}
-        }
-        printf("%s %d %d %d\n", nome, entrada1, entrada2, saida);
+				
+			
+				
+			        	     	i++;
+	
+	}       	
+	if(input>aux){			//printa o inpt e o output direitinho
+		
+		printf("\n%s %d ",nome, calculo[i] [0]);
+		
+	
+	}			
+	 else{
+			
+		printf("\n%s %d %d %d", nome, calculo[i] [0], calculo[i] [1], calculo[i] [2]);
+		aux=input;}
 
-    }
+
+}
+    
+     //--------------------------------------------------------------------------------------------------------
+
     
     printf("\n\n inputs igual %d \n",input);
     
@@ -105,12 +150,17 @@ int main()
  	//--------------------------------------------------------
  	 int qnt, j;
  	 qnt=input; //trocar qnt por input dps
- 	 
+ 	 char ayuda=qnt;
  	 int entrada;
  	 char vet[26];
  	 
+ 	for(i=0;i<26;i++){
+ 		
+ 		vet[0]=calculo[0] [2];
+	 }
  	 
- 	 for(entrada = 0; entrada < (pow(2,qnt)); entrada++) {
+ 	 
+ 	for(entrada = 0; entrada < (pow(2,qnt)); entrada++) {
         vet[0 ] = (entrada & 1       )?1:0;      /*   // x ? a:b <=> if(x) a; else b;*/
         vet[1 ] = (entrada & 2       )?1:0;      /*   // inline if*/
         vet[2 ] = (entrada & 4       )?1:0;
@@ -147,4 +197,5 @@ int main()
     
     fclose(arqNome);
 }
+
 }
