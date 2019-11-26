@@ -131,15 +131,18 @@ int main()
 			        	     	i++;
 	
 	}       	
-	if(input>aux){			//printa o inpt e o output direitinho
-		
-		printf("\n%s %d ",nome, calculo[i] [0]);
-		
+	if(input>aux){			//PRINTA o inpt e o output direitinho
+			
+
+		printf("\n%s %d  ",nome, calculo[i] [0]);			
+		fgets(nome, 100, arqNome);	
+		printf("%s",nome);		 
+
 		
 	}			
 	 else{
 	 	
-	 	if(circ==1){
+	 	if(circ==1){											//QUANDO DETECTAR CIRCUIT PRINTAR O NOME
 	 		 fgets(nome, 100, arqNome);{			 
 	 		
 	 		printf("\n CIRCUIT %s  ",nome);
@@ -149,7 +152,7 @@ int main()
 
 	else{
 			
-		printf("\n%s %d %d %d", nome, calculo[i] [0], calculo[i] [1], calculo[i] [2]);
+		printf("\n%s %d %d %d", nome, calculo[i] [0], calculo[i] [1], calculo[i] [2]);		//PARA CASOS NORMAIS
 		aux=input;}   
 		}
  circ=0;//AQ
