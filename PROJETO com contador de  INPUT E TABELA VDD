@@ -144,7 +144,7 @@ int main()
      //--------------------------------------------------------------------------------------------------------
 
     
-    printf("\n\n inputs igual %d \n",input);
+    printf("\n\n inputs igual %d, ultima coluna corresponde à saida \n",input);
     
  	puts("\nA tabela verdade para o programa e:");
  	//--------------------------------------------------------
@@ -161,6 +161,7 @@ int main()
  	 
  	 
  	for(entrada = 0; entrada < (pow(2,qnt)); entrada++) {
+ 		
         vet[0 ] = (entrada & 1       )?1:0;      /*   // x ? a:b <=> if(x) a; else b;*/
         vet[1 ] = (entrada & 2       )?1:0;      /*   // inline if*/
         vet[2 ] = (entrada & 4       )?1:0;
@@ -187,10 +188,13 @@ int main()
         vet[23] = (entrada & 8388608 )?1:0;
         vet[24] = (entrada & 16777216)?1:0;
         vet[25] = (entrada & 33554432)?1:0;
+        
         printf("  ");
         for(j=0;j<qnt;j++){
-            printf("%d ",vet[j]);
+            printf("%d  ",vet[j]);
         }
+        	printf("| %d",calculo[entrada][2]);
+        	
         printf("\n");
  	
  	//
